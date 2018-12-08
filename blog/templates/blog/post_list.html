@@ -1,17 +1,22 @@
+{% load static %}
+
 <html>
     <head>
         <title>Esme's Spanish Blog</title>
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-        <div>
-            <h1><a href="/">Esme's Spanish Blog</a></h1>
+        <div class="header">
+            <h1>mi blog en español</h1>
         </div>
 
         {% for post in posts %}
-            <div>
-                <p>published: {{ post.published_date }}</p>
-                <h2><a href="">{{ post.title }}</a></h2>
+            <div class="posts">
+                <h2>{{ post.title }}</h2>
+                <p>publicado: {{ post.published_date }}</p>
                 <p>{{ post.text|linebreaksbr }}</p>
+                <hr>
             </div>
         {% endfor %}
     </body>
