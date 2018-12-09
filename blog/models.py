@@ -17,4 +17,4 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-Post.objects.order_by('-published_date')
+Post.objects.order_by('published_date')
